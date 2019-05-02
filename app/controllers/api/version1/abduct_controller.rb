@@ -4,8 +4,8 @@ module Api
                         
             def update
                 @possible_abducted_survivor = Survivor.find(params[:id])
-                @survivors_report_array = Survivor.find(params[:id])
-                if @possible_abducted_survivor.update_attributes(abducted_or_not_params) && @survivor_reporter
+                @survivors_report_array = Survivor.find(survivor_report_abduction)
+                if @possible_abducted_survivor.update_attributes(abducted_or_not_params) && @survivor_report_array
                     render json: {
                         status: 'SUCCESS',
                         message: 'The survivor was abducted :(',
@@ -27,7 +27,9 @@ module Api
             end
 
             def survivor_report_abduction
-                params.permit(:name)
+                params["Survivor"].each do |id|
+                    Survivor.find(id)
+                end
             end
         end
     end
