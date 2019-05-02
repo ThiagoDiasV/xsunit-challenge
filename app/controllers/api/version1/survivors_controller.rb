@@ -2,7 +2,7 @@ module Api
     module Version1
         class SurvivorsController < ApplicationController
             def index 
-                @survivors = Survivor.order('age ASC')
+                @survivors = Survivor.order('name ASC')
                 render json: {
                     status: 'SUCCESS',
                     message: 'Loaded survivors',

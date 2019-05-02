@@ -1,7 +1,16 @@
 module Api
     module Version1
         class AbductController < ApplicationController
-                        
+            
+            def index # testing some logic to update abducted survivors
+                @survivors = Array.new
+                for i in 1..Survivor.count
+                    @survivor = Survivor.find(i).name
+                    @survivors.push(@survivor)
+                end
+                render json: {data: @survivors}
+            end
+
             def update
                 @possible_abducted_survivor = Survivor.find(params[:id])
                 @survivors_report_array = Survivor.find(survivor_report_abduction)
@@ -27,9 +36,7 @@ module Api
             end
 
             def survivor_report_abduction
-                params["Survivor"].each do |id|
-                    Survivor.find(id)
-                end
+                
             end
         end
     end
