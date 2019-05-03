@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+X-Sunit API Rest
 
-Things you may want to cover:
+* Ruby version: 2.6.2p47
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+* API Endpoints:
+    GET /api/version1/survivors => List all survivors
+    POST /api/version1/survivors => Create a new survivor
+    GET /api/version1/survivors/:id => Get a survivor
+    PUT /api/version1/survivors/:id => Update the last location of a survivor
+    PUT /api/version1/abduct => Abduct some survivor
+    GET /api/version1/reports => Get reports from survivors database
 * ...
