@@ -29,6 +29,6 @@ class Survivor < ApplicationRecord
             message: "%{value} isn't 'yes' or 'no' answer" }
 
     validates :abduct_score,
-                presence: true,
+            presence: true,
             numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5, only_integer: true }            
 end
