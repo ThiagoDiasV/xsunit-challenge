@@ -7,7 +7,6 @@
 ### API Endpoints:
     GET /api/version1/survivors     => List all survivors\
 
-    ```
     => GET /api/version1/survivors\
 
     => {
@@ -52,7 +51,7 @@
         }
     ]
     }
-    ```
+
 
     POST /api/version1/survivors    => Create a new survivor\
     GET /api/version1/survivors/:id => Get a survivor\
