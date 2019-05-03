@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_121837) do
+ActiveRecord::Schema.define(version: 2019_05_03_143953) do
+
+  create_table "abducts", force: :cascade do |t|
+    t.integer "abduct_score"
+    t.integer "survivor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survivor_id"], name: "index_abducts_on_survivor_id"
+  end
 
   create_table "survivors", force: :cascade do |t|
     t.string "name"
@@ -21,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_121837) do
     t.string "abducted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "abduct_score"
   end
 
 end

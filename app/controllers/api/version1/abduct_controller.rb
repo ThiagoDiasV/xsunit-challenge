@@ -1,15 +1,6 @@
 module Api
     module Version1
         class AbductController < ApplicationController
-            
-            def index 
-                @survivors = Survivor.order('name ASC')
-                render json: {
-                    status: 'SUCCESS',
-                    message: 'Loaded survivors',
-                    data: @survivors
-                }, status: :ok
-            end
 
             def show
                 @survivor = Survivor.find(params[:id])
@@ -21,16 +12,27 @@ module Api
             end
 
             def update
-
                 
                 @possible_abducted_survivor = Survivor.find(params[:id])
                 
-                if @possible_abducted_survivor.update_attributes(abducted_or_not_params)
-                    render json: {
-                        status: 'SUCCESS',
-                        message: 'The survivor abducted status was updated',
-                        data: @possible_abducted_survivor
-                    }, status: :ok  
+                if @possible_abducted_survivor.update_attributes(abducted_or_not_params) 
+                    @abduct_score = @possible_abducted_survivor.abduct_score
+                    @possible_abducted_survivor.update_attribute(:abduct_score, "#{@abduct_score}")
+                    if @abduct_score >= 3
+                        @possible_abducted_survivor.abducted = "yes"
+                        render json: {
+                            status: 'SUCCESS',
+                            message: 'The survivor was abducted :(',
+                            data: @possible_abducted_survivor
+                        }, status: :ok  
+                    elsif @abduct_score < 3
+                        @possible_abducted_survivor.abducted = "no"
+                        render json: {
+                            status: 'SUCCESS',
+                            message: 'New abducted report :(',
+                            data: @possible_abducted_survivor
+                        }, status: :ok
+                    end
                 else 
                     render json: {
                         status: 'ERROR',
@@ -44,7 +46,7 @@ module Api
             private
 
             def abducted_or_not_params
-                params.permit(:abducted)
+                params.permit(:abduct_score)
             end
         end
     end

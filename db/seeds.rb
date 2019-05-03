@@ -7,6 +7,7 @@ yes_or_no_array = ['yes', 'no']
         gender: Faker::Gender.binary_type,
         latitude: Faker::Address.latitude,
         longitude: Faker::Address.longitude,
-        abducted: yes_or_no_array.sample
+        abducted: yes_or_no_array.sample,
+        abduct_score: Faker::Number.within(0..1)
     })
 end
