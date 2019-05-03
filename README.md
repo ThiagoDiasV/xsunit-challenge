@@ -3,6 +3,8 @@
 X-SUNIT REST API stores information about the survivors of the current alien invasion, in order to help we, X-SUNIT members, to survive this terrifying apocalypse.  
 
 ## Ruby version: 2.6.2p47
+## Rails version: 5.2.3
+## Database: SQLite3
 
 ### API Endpoints:
 
