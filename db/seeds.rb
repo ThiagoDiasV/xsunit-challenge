@@ -1,3 +1,5 @@
+yes_or_no_array = ['yes', 'no']
+
 100.times do
     Survivor.create({
         name: Faker::Name.name,
@@ -5,6 +7,6 @@
         gender: Faker::Gender.binary_type,
         latitude: Faker::Address.latitude,
         longitude: Faker::Address.longitude,
-        abducted: Faker::Boolean.boolean
+        abducted: yes_or_no_array.sample
     })
 end

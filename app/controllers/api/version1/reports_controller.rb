@@ -14,11 +14,11 @@ module Api
                 for id_value in @ids_list
                     @survivors_ordered_by_name_with_abducted_status[Survivor.find(id_value).name] = Survivor.find(id_value).abducted
                 end
-                
+
                 data = {
                     'Abducted survivors (%)': @abducted_survivors_percent.round(2), 
                     'Non-abducted survivors (%)': @non_abducted_survivors_percent.round(2),
-                    'Survivors': @survivors_ordered_by_name_with_abducted_status.sort.to_h
+                    'Survivor: Abducted?': @survivors_ordered_by_name_with_abducted_status.sort.to_h
                 }
 
                 render json: {
