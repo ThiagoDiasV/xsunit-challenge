@@ -24,6 +24,6 @@ class Survivor < ApplicationRecord
     
     validates :abducted,
             presence: true,
-            inclusion: { in: %w(t f),
+            inclusion: { in: %w(yes no),
             message: "%{value} isn't 'yes' or 'no' answer" }
 end
