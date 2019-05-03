@@ -28,7 +28,7 @@ module Api
                 if @possible_abducted_survivor.update_attributes(abducted_or_not_params)
                     render json: {
                         status: 'SUCCESS',
-                        message: 'The survivor was abducted :(',
+                        message: 'The survivor abducted status was updated',
                         data: @possible_abducted_survivor
                     }, status: :ok  
                 else 
