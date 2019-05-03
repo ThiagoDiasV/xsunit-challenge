@@ -55,8 +55,9 @@ X-SUNIT REST API stores information about the survivors of the current alien inv
 }
 ```
 
-* POST /api/version1/survivors    => Create a new survivor\
+* POST /api/version1/survivors    => Create a new survivor
 
+#### Example:
 ```
 => POST /api/version1/survivors 
 Headers = Key: Content-Type / Value: application/json
