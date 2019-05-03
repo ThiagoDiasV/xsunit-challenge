@@ -1,4 +1,5 @@
 class Survivor < ApplicationRecord
+   
     validates :name, 
             presence: true, 
             length: {minimum: 2, maximum: 70, message: "%{value} isn't a valid name"}, 
