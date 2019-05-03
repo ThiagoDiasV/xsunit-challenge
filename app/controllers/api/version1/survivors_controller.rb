@@ -57,7 +57,7 @@ module Api
             private
 
             def survivor_params
-                params.permit(:name, :age, :gender, :latitude, :longitude, :abducted)
+                params.permit(:name, :age, :gender, :latitude, :longitude, :abducted, :abduct_score)
             end
 
             def last_location_params
