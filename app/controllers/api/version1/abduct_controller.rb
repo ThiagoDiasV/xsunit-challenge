@@ -11,14 +11,26 @@ module Api
                 render json: {data: @survivors}
             end
 
+            def show
+                @survivor = Survivor.find(params[:id])
+                render json: {
+                    status: 'SUCCESS',
+                    message: 'Loaded survivor',
+                    data: @survivor
+                }, status: :ok
+            end
+
             def update
+
+                =begin
                 @possible_abducted_survivor = Survivor.find(params[:id])
-                @survivors_report_array = Survivor.find(survivor_report_abduction)
-                if @possible_abducted_survivor.update_attributes(abducted_or_not_params) && @survivor_report_array
+                
+                @survivors_report_array = Survivor.find(params[:id])
+                if @possible_abducted_survivor.update_attributes(abducted_or_not_params) # && @survivor_report_array
                     render json: {
                         status: 'SUCCESS',
                         message: 'The survivor was abducted :(',
-                        data: @possible_abducted_survivor
+                        data: user_response
                     }, status: :ok  
                 else 
                     render json: {
@@ -27,6 +39,8 @@ module Api
                         data: @survivor.errors
                     }, status: :unprocessable_entity   
                 end
+                =end
+                json_data = Survivor.find(params)
             end
 
             private
@@ -36,7 +50,7 @@ module Api
             end
 
             def survivor_report_abduction
-                
+                params.permit!
             end
         end
     end
