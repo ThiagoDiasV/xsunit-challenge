@@ -7,10 +7,12 @@
 ### API Endpoints:
 GET /api/version1/survivors     => List all survivors
 
+#### Example: 
 ```
-GET /api/version1/survivors
 
-{
+=> GET /api/version1/survivors
+
+=> {
 "status": "SUCCESS",
 "message": "Loaded survivors",
 "data": [
@@ -33,7 +35,7 @@ GET /api/version1/survivors
         "gender": "Female",
         "latitude": -42.99190402702011,
         "longitude": -20.351572684392693,
-        "abducted": "no",
+        "abducted": "yes",
         "created_at": "2019-05-03T15:37:23.343Z",
         "updated_at": "2019-05-03T15:55:32.549Z",
         "abduct_score": 3
