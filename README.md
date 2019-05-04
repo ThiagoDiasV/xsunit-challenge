@@ -156,19 +156,24 @@ Body = {
 => PUT /api/version1/abduct/351
 Headers = Key: Content-Type / Value: application/json
 Body = {
+	"last_survivor_name_abduct_report": "Example name"
+}
+
+=> {
     "status": "SUCCESS",
-    "message": "The survivor was abducted :(",
+    "message": "New abducted report :(",
     "data": {
-        "id": 351,
-        "abduct_score": 3,
-        "name": "Reynaldo Yundt",
-        "age": 51,
+        "last_survivor_name_abduct_report": "Example name",
+        "id": 383,
+        "name": "Marylouise Quitzon",
+        "age": 29,
         "gender": "Male",
-        "latitude": 46.204471894352764,
-        "longitude": 118.54037780829071,
-        "abducted": "yes",
-        "created_at": "2019-05-03T15:37:33.033Z",
-        "updated_at": "2019-05-03T19:23:41.925Z"
+        "latitude": 39.53373816425997,
+        "longitude": -24.703223775299904,
+        "abducted": "no",
+        "created_at": "2019-05-03T15:37:41.225Z",
+        "updated_at": "2019-05-04T21:57:53.895Z",
+        "abduct_score": 2
     }
 }
 ```
