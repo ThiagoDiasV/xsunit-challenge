@@ -6,5 +6,4 @@ Rails.application.routes.draw do
             resources :reports
         end
     end
-    # get 'reports'
 end
