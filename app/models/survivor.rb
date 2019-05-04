@@ -30,5 +30,10 @@ class Survivor < ApplicationRecord
 
     validates :abduct_score,
             presence: true,
-            numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5, only_integer: true }            
+            numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5, only_integer: true }   
+
+    validates :last_survivor_name_abduct_report,
+            presence: true,
+            length: {minimum: 2, maximum: 70, message: "%{value} isn't a valid name"}, 
+            format: {with: /\A[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,70}\z/}
 end
