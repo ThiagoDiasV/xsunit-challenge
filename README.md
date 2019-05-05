@@ -1,6 +1,6 @@
 # X-SUNIT REST API
 
-X-SUNIT REST API stores information about the survivors of the current alien invasion, in order to help us, X-SUNIT members, to survive this terrifying apocalypse.  
+X-SUNIT REST API stores information about the survivors of the current alien invasion, in order to help us, X-SUNIT members, to survive this terrifying apocalypse. May the force be with you, X-SUNIT survivors!
 
 ## Ruby version
 2.6.2p47
@@ -158,7 +158,7 @@ Body = {
 }
 ```
 
-* PUT /api/version1/abduct/:id     => Abduct some survivor
+* PUT /api/version1/abduct/:id     => Abduct some survivor (add the name of a survivor that reported the abduction of this survivor)
 
 #### Example
 
@@ -259,4 +259,12 @@ Body = {
 }
 ```
 
-* ...
+#### Observations 
+* The most difficult task of this challenge to me was the part 3 (Flag survivor as abducted). What I tried to do:
+
+1. Add a column to table "survivors" named "last_survivor_name_abduct_report", and the PUT request to /api/version1/abduct/:id will be a json with a name of a non-abducted survivor.
+2. I wanted to add some features like one that would make invalid the PUT request if the "last_survivor_name_abduct_report" was the name of the possible abducted survivor, or if the report was made by some survivor that already reported the abduction of this survivor, but my poor Rails knowledge was a problem to me in this part of the problem. 
+
+* The other challenge parts was ok, although this was the first time I made an application using Rails, the references was very useful to me, thank you for sending the links.
+
+* Trying to accomplish this challenge was very entertaining to me, thank you again for this opportunity. 
