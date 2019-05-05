@@ -2,20 +2,20 @@
 
 X-SUNIT REST API stores information about the survivors of the current alien invasion, in order to help us, X-SUNIT members, to survive this terrifying apocalypse.  
 
-## Ruby version: 
+## Ruby version
 2.6.2p47
 
-## Ruby on Rails version: 
+## Ruby on Rails version
 5.2.3
 
-## Database Management System: 
+## Database Management System
 SQLite3
 
-### API Endpoints:
+### API Endpoints
 
 * GET /api/version1/survivors     => List all survivors
 
-#### Example: 
+#### Example 
 
 ```
 => GET /api/version1/survivors
@@ -69,7 +69,7 @@ SQLite3
 
 * POST /api/version1/survivors    => Create a new survivor
 
-#### Example:
+#### Example
 
 ```
 => POST /api/version1/survivors 
@@ -104,7 +104,7 @@ Body = {
 
 * GET /api/version1/survivors/:id => Get a survivor
 
-#### Example: 
+#### Example
 
 ```
 => GET /api/version1/survivors/340
@@ -130,7 +130,7 @@ Body = {
 
 * PUT /api/version1/survivors/:id => Update the last location of a survivor
 
-#### Example: 
+#### Example
 
 ```
 => PUT /api/version1/survivors/340
@@ -160,7 +160,7 @@ Body = {
 
 * PUT /api/version1/abduct/:id     => Abduct some survivor
 
-#### Example: 
+#### Example
 
 ```
 => PUT /api/version1/abduct/351
@@ -190,7 +190,7 @@ Body = {
 
 * GET /api/version1/reports       => Get reports from survivors database
 
-#### Example:
+#### Example
 
 ```
 => GET /api/version1/reports
