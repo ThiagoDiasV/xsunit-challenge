@@ -265,6 +265,6 @@ Body = {
 1. Add a column to table "survivors" named "last_survivor_name_abduct_report", and the PUT request to /api/version1/abduct/:id will be a json with a name of a non-abducted survivor.
 2. I wanted to add some features like one that would make invalid the PUT request if the "last_survivor_name_abduct_report" was the name of the possible abducted survivor, or if the report was made by some survivor that already reported the abduction of this survivor, but my poor Rails knowledge was a problem to me in this part of the problem. 
 
-* The others challenge parts was ok, although this was the first time I made an application using Rails, the references was very useful to me, thank you for sending the links.
+* The others challenge parts were ok, although this was the first time I made an application using Rails, the references was very useful to me, thank you for sending the links.
 
 * Trying to accomplish this challenge was very entertaining to me, thank you again for this opportunity. 
