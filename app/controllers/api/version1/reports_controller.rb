@@ -2,8 +2,11 @@ module Api
     module Version1
         class ReportsController < ApplicationController
             def index 
+
                 @abducted_survivors_percent = Survivor.where(abducted: "yes").count/Survivor.count.to_f*100
+
                 @non_abducted_survivors_percent = Survivor.where(abducted: "no").count/Survivor.count.to_f*100
+
                 @survivors_ordered_by_name_with_abducted_status = Hash.new
                 @ids_list = Array.new
                 

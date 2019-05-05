@@ -2,15 +2,6 @@ module Api
     module Version1
         class AbductController < ApplicationController
 
-            def show
-                @survivor = Survivor.find(params[:id])
-                render json: {
-                    status: 'SUCCESS',
-                    message: 'Loaded survivor',
-                    data: @survivor
-                }, status: :ok
-            end
-
             def update
                 
                 @possible_abducted_survivor = Survivor.find(params[:id])
@@ -26,6 +17,7 @@ module Api
                                                              :last_survivor_name_abduct_report, 
                                                              @possible_abducted_survivor.last_survivor_name_abduct_report
                                                              )
+                                                             
                 @survivor_name_report = @possible_abducted_survivor.last_survivor_name_abduct_report
                 
                 if @possible_abducted_survivor.update_attributes(survivor_report_abduction_name_params)
