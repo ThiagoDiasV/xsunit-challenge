@@ -267,4 +267,6 @@ Body = {
 
 * The others challenge parts were ok, although this was the first time I made an application using Rails, the references was very useful to me, thank you for sending the links.
 
+* I tried to build an application using clean code, for this reason some variables have big names. 
+
 * Trying to accomplish this challenge was very entertaining to me, thank you again for this opportunity. 
