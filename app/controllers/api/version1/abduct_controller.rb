@@ -21,8 +21,11 @@ module Api
                         not_abducted_survivors_list.append survivor.name 
                     end
                 end
-                
-                @possible_abducted_survivor.update_attribute(:last_survivor_name_abduct_report, @possible_abducted_survivor.last_survivor_name_abduct_report)
+
+                @possible_abducted_survivor.update_attribute(
+                                                             :last_survivor_name_abduct_report, 
+                                                             @possible_abducted_survivor.last_survivor_name_abduct_report
+                                                             )
                 @survivor_name_report = @possible_abducted_survivor.last_survivor_name_abduct_report
                 
                 if @possible_abducted_survivor.update_attributes(survivor_report_abduction_name_params)
