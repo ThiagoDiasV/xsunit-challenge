@@ -1,39 +1,40 @@
 class Survivor < ApplicationRecord
 
-    validates :name, 
-            presence: true, 
-            length: {minimum: 2, maximum: 70, message: "%{value} isn't a valid name"}, 
-            format: {with: /\A[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,70}\z/}
+        validates :name, 
+                presence: true, 
+                length: {minimum: 2, maximum: 70, message: "%{value} isn't a valid name"}, 
+                format: {with: /\A[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,70}\z/}
 
-    validates :age, 
-            presence: true, 
-            inclusion: { in: 1..120, message: "%{value} is not valid" },
-            numericality: { only_integer: true }
+        validates :age, 
+                presence: true, 
+                inclusion: { in: 1..120, message: "%{value} is not valid" },
+                numericality: { only_integer: true }
 
-    validates :gender, 
-            presence: true, 
-            inclusion: { in: %w(Male Female), 
-            message: "%{value} isn't a valid value for gender" }
+        validates :gender, 
+                presence: true, 
+                inclusion: { in: %w(Male Female), 
+                message: "%{value} isn't a valid value for gender" }
 
-    validates :latitude, 
-            presence: true, 
-            numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
+        validates :latitude, 
+                presence: true, 
+                numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
 
-    validates :longitude, 
-            presence: true, 
-            numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
-    
-    validates :abducted,
-            presence: true,
-            inclusion: { in: %w(yes no),
-            message: "%{value} isn't 'yes' or 'no' answer" }
+        validates :longitude, 
+                presence: true, 
+                numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
 
-    validates :abduct_score,
-            presence: true,
-            numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5, only_integer: true }   
+        validates :abducted,
+                presence: true,
+                inclusion: { in: %w(yes no),
+                message: "%{value} isn't 'yes' or 'no' answer" }
 
-    validates :last_survivor_name_abduct_report,
-            presence: true,
-            length: {minimum: 2, maximum: 70, message: "%{value} isn't a valid name"}, 
-            format: {with: /\A[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,70}\z/}
-end
+        validates :abduct_score,
+                allow_blank: true,
+                numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5, only_integer: true }   
+
+        validates :last_survivor_name_abduct_report,
+                allow_nil: true,
+                allow_blank: true,
+                length: {minimum: 2, maximum: 70, message: "%{value} isn't a valid name"}, 
+                format: {with: /\A[A-Z][a-zA-Z][^#&<>\"~;$^%{}?]{1,70}\z/}
+        end

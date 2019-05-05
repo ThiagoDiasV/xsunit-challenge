@@ -10,23 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_211740) do
-
-  create_table "abduction_points", force: :cascade do |t|
-    t.integer "abduction_points"
-    t.integer "survivor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["survivor_id"], name: "index_abduction_points_on_survivor_id"
-  end
-
-  create_table "abducts", force: :cascade do |t|
-    t.integer "abduct_score"
-    t.integer "survivor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["survivor_id"], name: "index_abducts_on_survivor_id"
-  end
+ActiveRecord::Schema.define(version: 2019_05_05_033001) do
 
   create_table "survivors", force: :cascade do |t|
     t.string "name"
@@ -37,8 +21,8 @@ ActiveRecord::Schema.define(version: 2019_05_04_211740) do
     t.string "abducted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "abduct_score"
-    t.string "last_survivor_name_abduct_report"
+    t.integer "abduct_score", default: 0
+    t.string "last_survivor_name_abduct_report", default: ""
   end
 
 end

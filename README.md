@@ -2,9 +2,14 @@
 
 X-SUNIT REST API stores information about the survivors of the current alien invasion, in order to help us, X-SUNIT members, to survive this terrifying apocalypse.  
 
-## Ruby version: 2.6.2p47
-## Rails version: 5.2.3
-## Database: SQLite3
+## Ruby version: 
+2.6.2p47
+
+## Ruby on Rails version: 
+5.2.3
+
+## Database Management System: 
+SQLite3
 
 ### API Endpoints:
 
@@ -29,7 +34,8 @@ X-SUNIT REST API stores information about the survivors of the current alien inv
         "abducted": "no",
         "created_at": "2019-05-03T15:37:33.547Z",
         "updated_at": "2019-05-03T15:37:33.547Z",
-        "abduct_score": 1
+        "abduct_score": 1,
+        "last_survivor_name_abduct_report": "Charles Williamsom"
     },
     {
         "id": 313,
@@ -41,7 +47,8 @@ X-SUNIT REST API stores information about the survivors of the current alien inv
         "abducted": "yes",
         "created_at": "2019-05-03T15:37:23.343Z",
         "updated_at": "2019-05-03T15:55:32.549Z",
-        "abduct_score": 3
+        "abduct_score": 3,
+        "last_survivor_name_abduct_report": "Thomas Edison"
     },
     {
         "id": 335,
@@ -53,7 +60,8 @@ X-SUNIT REST API stores information about the survivors of the current alien inv
         "abducted": "no",
         "created_at": "2019-05-03T15:37:28.878Z",
         "updated_at": "2019-05-03T15:37:28.878Z",
-        "abduct_score": 1
+        "abduct_score": 0,
+        "last_survivor_name_abduct_report": ""
     }
 ]
 }
@@ -72,8 +80,7 @@ Body = {
 	"gender": "Female",
 	"latitude": "54.1238313155123",
 	"longitude": "20.85123031213125",
-	"abducted": "no",
-	"abduct_score": "0"
+	"abducted": "no"
 }
 
 => {
@@ -89,7 +96,8 @@ Body = {
         "abducted": "no",
         "created_at": "2019-05-03T18:47:15.817Z",
         "updated_at": "2019-05-03T18:47:15.817Z",
-        "abduct_score": 0
+        "abduct_score": 0,
+        "last_survivor_name_abduct_report": ""
     }
 }
 ```
@@ -115,6 +123,7 @@ Body = {
         "created_at": "2019-05-03T15:37:30.178Z",
         "updated_at": "2019-05-03T15:37:30.178Z",
         "abduct_score": 3
+        "last_survivor_name_abduct_report": "Evan Watson"
     }
 }
 ```
@@ -134,16 +143,17 @@ Body = {
     "status": "SUCCESS",
     "message": "Last location updated successfully",
     "data": {
-        "id": 340,
+        "id": 50,
         "latitude": 80.004125012,
         "longitude": -50.04102410245,
-        "name": "Mrs. Charisse Olson",
-        "age": 76,
-        "gender": "Female",
-        "abducted": "yes",
-        "abduct_score": 1,
-        "created_at": "2019-05-03T15:37:30.178Z",
-        "updated_at": "2019-05-03T19:20:31.764Z"
+        "name": "Josh Fay",
+        "age": 106,
+        "gender": "Male",
+        "abducted": "no",
+        "abduct_score": 0,
+        "last_survivor_name_abduct_report": "",
+        "created_at": "2019-05-05T03:34:25.512Z",
+        "updated_at": "2019-05-05T03:56:13.801Z"
     }
 }
 ```
@@ -156,19 +166,24 @@ Body = {
 => PUT /api/version1/abduct/351
 Headers = Key: Content-Type / Value: application/json
 Body = {
+	"last_survivor_name_abduct_report": "Example name"
+}
+
+=> {
     "status": "SUCCESS",
-    "message": "The survivor was abducted :(",
+    "message": "New abducted report :(",
     "data": {
-        "id": 351,
-        "abduct_score": 3,
-        "name": "Reynaldo Yundt",
-        "age": 51,
+        "last_survivor_name_abduct_report": "Example name",
+        "id": 383,
+        "name": "Marylouise Quitzon",
+        "age": 29,
         "gender": "Male",
-        "latitude": 46.204471894352764,
-        "longitude": 118.54037780829071,
-        "abducted": "yes",
-        "created_at": "2019-05-03T15:37:33.033Z",
-        "updated_at": "2019-05-03T19:23:41.925Z"
+        "latitude": 39.53373816425997,
+        "longitude": -24.703223775299904,
+        "abducted": "no",
+        "created_at": "2019-05-03T15:37:41.225Z",
+        "updated_at": "2019-05-04T21:57:53.895Z",
+        "abduct_score": 2
     }
 }
 ```
